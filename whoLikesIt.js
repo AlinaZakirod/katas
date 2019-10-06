@@ -8,33 +8,18 @@ Implement a function likes :: [String] -> String, which must take in input array
 /*****************************************************************************************/
 
 /*************************************** my solution *************************************/
-function likes(names) {
-  arrayOfNames = names.split(", ");
-  console.log(arrayOfNames.length);
-  if (arrayOfNames.length <= 0) return "no one likes it";
-  else if (arrayOfNames.length < 2) {
-    return arrayOfNames[0] + " likes this";
-  } else if (arrayOfNames.length < 3) {
-    return arrayOfNames[0] + " and " + arrayOfNames[1] + " like it";
-  } else if (arrayOfNames.length < 4) {
-    return (
-      arrayOfNames[0] +
-      ", " +
-      arrayOfNames[1] +
-      " and " +
-      arrayOfNames[2] +
-      " like it"
-    );
-  } else
-    return (
-      arrayOfNames[0] +
-      ", " +
-      arrayOfNames[1] +
-      " and " +
-      (arrayOfNames.length - 2) +
-      " others like it"
-    );
+function likes(arrayOfFans) {
+  const fanscount = arrayOfFans.length;
+  if (!fanscount) return "no one likes it";
+  else if (fanscount === 1) return `${arrayOfFans[0]} likes it`;
+  else if (fanscount === 2)
+    return `${arrayOfFans[0]} and ${arrayOfFans[1]}like it`;
+  else if (fanscount === 3)
+    return `${arrayOfFans[0]}, ${arrayOfFans[1]} and ${arrayOfFans[2]}like it`;
+  else if (fanscount > 3)
+    return `${arrayOfFans[0]}, ${arrayOfFans[1]} and ${fanscount - 2} like it`;
 }
+
 // likes("Joe, Max, Silvia, Maria")
 
 /*********************************** the best solution ***********************************/
