@@ -21,5 +21,3 @@ function likes(arrayOfFans) {
 }
 
 // likes("Joe, Max, Silvia, Maria")
-
-/*********************************** the best solution ***********************************/
